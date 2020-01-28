@@ -1,6 +1,6 @@
-package fr.iut.coffre.src.etatsCoffre;
+package fr.iut.coffre.src.entities.etatsCoffre;
 
-import fr.iut.coffre.src.EtatsCoffre;
+import fr.iut.coffre.src.entities.EtatsCoffre;
 
 //Singleton
 public class Bloque extends EtatsCoffre {

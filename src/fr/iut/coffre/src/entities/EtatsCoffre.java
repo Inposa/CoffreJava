@@ -1,4 +1,4 @@
-package fr.iut.coffre.src;
+package fr.iut.coffre.src.entities;
 
 public abstract class EtatsCoffre {
 	

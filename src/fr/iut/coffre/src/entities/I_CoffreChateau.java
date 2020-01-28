@@ -1,4 +1,4 @@
-package fr.iut.coffre.src;
+package fr.iut.coffre.src.entities;
 
 public interface I_CoffreChateau {
 
@@ -23,5 +23,7 @@ public interface I_CoffreChateau {
 	public abstract String getNomEtat();
 	
 	public abstract void setEtat(EtatsCoffre etatCoffre);
+	
+	public abstract void attacherObservateur(Observateur O);
 
 }

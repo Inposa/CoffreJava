@@ -1,7 +1,8 @@
 package fr.iut.coffre.tests;
 
 import fr.iut.coffre.src.*;
-import fr.iut.coffre.src.etatsCoffre.Coffre;
+import fr.iut.coffre.src.entities.Coffre;
+import fr.iut.coffre.src.entities.I_CoffreChateau;
 
 import static org.junit.Assert.*;
 

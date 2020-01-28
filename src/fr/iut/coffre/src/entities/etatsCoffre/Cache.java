@@ -1,7 +1,7 @@
-package fr.iut.coffre.src.etatsCoffre;
+package fr.iut.coffre.src.entities.etatsCoffre;
 
-import fr.iut.coffre.src.EtatsCoffre;
-import fr.iut.coffre.src.I_CoffreChateau;
+import fr.iut.coffre.src.entities.EtatsCoffre;
+import fr.iut.coffre.src.entities.I_CoffreChateau;
 
 //Singleton
 public class Cache extends EtatsCoffre{
