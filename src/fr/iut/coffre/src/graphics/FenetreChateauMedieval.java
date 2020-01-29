@@ -7,9 +7,11 @@ import javax.swing.*;
 import fr.iut.coffre.src.controllers.ControllerChateauMedieval;
 import fr.iut.coffre.src.controllers.ControllerCoffre;
 import fr.iut.coffre.src.entities.CoffreBuilder;
+import fr.iut.coffre.src.entities.I_Coffre;
+import fr.iut.coffre.src.entities.ObservateurCoffre;
 
 public class FenetreChateauMedieval extends JFrame implements ActionListener,
-WindowListener{
+WindowListener, ObservateurCoffre{
 
 	private JButton btOterLivre;
 	private JButton btRemettreLivre;
@@ -20,6 +22,7 @@ WindowListener{
 
 	private ControllerChateauMedieval controllerChateau;
 
+	// Fenêtre d'affichage principale
 	public FenetreChateauMedieval() {
 
 		setTitle("exercice Chateau Médiéval (F02)");
@@ -66,7 +69,6 @@ WindowListener{
 	}
 
 	public void actionPerformed(ActionEvent e) {
-
 		if (e.getSource() == btOterLivre) {
 			this.controllerChateau.oterLivre();
 			System.out.println("Vous venez d'appuyer sur le bouton Oter Livre UML");
@@ -107,50 +109,40 @@ WindowListener{
 	public void windowOpened(WindowEvent arg0) {}
 
 
-	//Pour cacher boutons après
-	/*		
-	private void afficherBtChandelle()
-		{
-			btTournerDroite.setVisible(true);
-			btTournerGauche.setVisible(true);
-		}
+	//Pour cacher boutons après	
+	private void afficherBtChandelle() {
+		btTournerDroite.setVisible(true);
+		btTournerGauche.setVisible(true);
+	}
 
-		private void cacherBtChandelle()
-		{
-			btTournerDroite.setVisible(false);
-			btTournerGauche.setVisible(false);
-		}
+	private void cacherBtChandelle() {
+		btTournerDroite.setVisible(false);
+		btTournerGauche.setVisible(false);
+	}
 
-		private void afficherBtFermerCoffre()
-		{
-			btFermerCoffre.setVisible(true);
-		}
+	private void afficherBtFermerCoffre() {
+		btFermerCoffre.setVisible(true);
+	}
 
-		private void cacherBtFermerCoffre()
-		{
-			btFermerCoffre.setVisible(false);
-		}
+	private void cacherBtFermerCoffre() {
+		btFermerCoffre.setVisible(false);
+	}
 
-		private void afficherBtOterLivre()
-		{
-			btOterLivre.setVisible(true);
-		}
+	private void afficherBtOterLivre() {
+		btOterLivre.setVisible(true);
+	}
 
-		private void cacherBtOterLivre()
-		{
-			btOterLivre.setVisible(false);
-		}
+	private void cacherBtOterLivre() {
+		btOterLivre.setVisible(false);
+	}
 
-		private void afficherBtRemettreLivre()
-		{
-			btRemettreLivre.setVisible(true);
-		}
+	private void afficherBtRemettreLivre() {
+		btRemettreLivre.setVisible(true);
+	}
 
-		private void cacherBtRemettreLivre()
-		{
-			btRemettreLivre.setVisible(false);
-		}
-	 */
+	private void cacherBtRemettreLivre() {
+		btRemettreLivre.setVisible(false);
+	}
 
 	public static void main(String[] args) {
 		FenetreChateauMedieval c = new FenetreChateauMedieval();
@@ -163,6 +155,11 @@ WindowListener{
 		c.controllerChateau.setObservateur(F_etat);
 		c.controllerChateau.setObservateur(F_lapin);
 
+
+	}
+
+	@Override
+	public void mettreAJour(I_Coffre coffre) {
 
 	}
 

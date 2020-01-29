@@ -26,5 +26,26 @@ public abstract class EtatsCoffre {
 	public void libererLapin(I_Coffre coffre) {}
 	
 	public void recupererChien(I_Coffre coffre) {}
+	
+	
+	public boolean peutOterLivre() {
+		return false;
+	}
+
+	public boolean peutRemettreLivre() {
+		return false;
+	}
+
+	public boolean peutTournerChandelleDroite() {
+		return false;
+	}
+
+	public boolean peutTournerChandelleGauche() {
+		return false;
+	}
+
+	public boolean peutFermerCoffre() {
+		return false;
+	}
 
 }

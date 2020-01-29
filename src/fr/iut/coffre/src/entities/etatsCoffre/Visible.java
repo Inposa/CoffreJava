@@ -46,5 +46,20 @@ public abstract class Visible extends EtatsCoffre {
 	@Override
 	public abstract String getNomEtat();
 
+	
+	@Override
+	public boolean peutRemettreLivre() {
+		return true;
+	}
+
+	@Override
+	public boolean peutTournerChandelleDroite() {
+		return true;
+	}
+
+	@Override
+	public boolean peutTournerChandelleGauche() {
+		return true;
+	}
 
 }

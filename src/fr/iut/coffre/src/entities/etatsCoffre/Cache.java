@@ -39,6 +39,10 @@ public class Cache extends EtatsCoffre{
 	public String getNomEtat() {
 		return Cache.NOM_ETAT;
 	}
-
+	
+	@Override
+	public boolean peutOterLivre() {
+		return true;
+	}
 
 }

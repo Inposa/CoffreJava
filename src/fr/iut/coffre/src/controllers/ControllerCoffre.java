@@ -8,7 +8,7 @@ import fr.iut.coffre.src.entities.ObservateurCoffre;
 
 public class ControllerCoffre implements ControllerChateauMedieval {
 	private I_Coffre coffre;
-	
+
 	public ControllerCoffre(I_Coffre coffre) {
 		//this.coffre = new Coffre();
 		this.coffre = coffre;
@@ -44,18 +44,18 @@ public class ControllerCoffre implements ControllerChateauMedieval {
 		this.coffre.attacherObservateur(Obs);
 	}
 
-	
+
 	//public boolean isLapinLibere();
-	
+
 	//public void setLapinLibere(boolean lapinLibere);
-	
+
 	//public void setChienLibere(boolean chienLibere);
 
 	//public boolean isChienLibere();
-	
+
 	//public String getNomEtat();
-	
+
 	//public void setEtat(EtatsCoffre etatCoffre);
 
-	
+
 }

@@ -39,5 +39,9 @@ public class Ouvert extends EtatsCoffre {
 		return Ouvert.NOM_ETAT;
 	}
 
+	@Override
+	public boolean peutFermerCoffre() {
+		return true;
+	}
 
 }

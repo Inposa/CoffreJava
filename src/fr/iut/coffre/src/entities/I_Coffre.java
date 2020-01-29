@@ -27,6 +27,12 @@ public interface I_Coffre {
 	public abstract void attacherObservateur(ObservateurCoffre O);
 
 	
+	public abstract boolean peutOterLivre();
+	public abstract boolean peutRemettreLivre();
+	public abstract boolean peutTournerChandelleDroite();
+	public abstract boolean peutTournerChandelleGauche();
+	public abstract boolean peutFermerCoffre();
+	
 	//public abstract boolean peutRemettreLivre();
 	
 	

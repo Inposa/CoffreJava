@@ -16,6 +16,7 @@ public class Coffre implements I_Coffre {
 	
 	private String nomEtat;
 	
+	//Observateurs qui mettrons à jour les fenêtres d'état
 	private List<ObservateurCoffre> auditeurs;
 	
 	
@@ -105,6 +106,31 @@ public class Coffre implements I_Coffre {
 		this.nomEtat = etat.getNomEtat();
 		
 		this.avertir();
+	}
+
+	@Override
+	public boolean peutOterLivre() {
+		return this.etat.peutOterLivre();
+	}
+
+	@Override
+	public boolean peutRemettreLivre() {
+		return this.etat.peutRemettreLivre();
+	}
+
+	@Override
+	public boolean peutTournerChandelleDroite() {
+		return this.etat.peutTournerChandelleDroite();
+	}
+
+	@Override
+	public boolean peutTournerChandelleGauche() {
+		return this.etat.peutTournerChandelleGauche();
+	}
+
+	@Override
+	public boolean peutFermerCoffre() {
+		return this.etat.peutFermerCoffre();
 	}
 
 }
