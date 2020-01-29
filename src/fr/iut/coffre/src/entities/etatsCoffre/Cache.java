@@ -1,12 +1,12 @@
 package fr.iut.coffre.src.entities.etatsCoffre;
 
 import fr.iut.coffre.src.entities.EtatsCoffre;
-import fr.iut.coffre.src.entities.I_CoffreChateau;
+import fr.iut.coffre.src.entities.I_Coffre;
 
 //Singleton
 public class Cache extends EtatsCoffre{
 	
-	private static String NOM_ETAT = "CacheParBibliotheque";
+	private static String NOM_ETAT = "Caché Par Bibliothèque";
 	private static EtatsCoffre INSTANCE = null;
 
 	private Cache(){}
@@ -21,7 +21,7 @@ public class Cache extends EtatsCoffre{
 
 	
 	@Override
-	public void oterLivre(I_CoffreChateau coffre) {
+	public void oterLivre(I_Coffre coffre) {
 		coffre.setEtat(Ferme.getInstance());
 	}
 

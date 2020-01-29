@@ -2,7 +2,7 @@ package fr.iut.coffre.tests;
 
 import fr.iut.coffre.src.*;
 import fr.iut.coffre.src.entities.Coffre;
-import fr.iut.coffre.src.entities.I_CoffreChateau;
+import fr.iut.coffre.src.entities.I_Coffre;
 
 import static org.junit.Assert.*;
 
@@ -13,7 +13,7 @@ import org.junit.Test;
 
 public class CoffreTest {
 	
-	private I_CoffreChateau coffre;
+	private I_Coffre coffre;
 
 	@Before
 	public void setUp() throws Exception {
@@ -26,7 +26,7 @@ public class CoffreTest {
 
 	@Test
 	public void testAuDemarrage() {
-		assertEquals("CacheParBibliotheque",coffre.getNomEtat());
+		assertEquals("Caché Par Bibliothèque",coffre.getNomEtat());
 		assertFalse(coffre.isChienLibere());
 		assertFalse(coffre.isLapinLibere());
 	}
@@ -34,7 +34,7 @@ public class CoffreTest {
 	@Test
 	public void testApresAvoirOteLeLivreDeLaBibliotheque() {
 		coffre.oterLivre();
-		assertEquals("Ferme",coffre.getNomEtat());
+		assertEquals("Fermé",coffre.getNomEtat());
 		assertFalse(coffre.isChienLibere());
 		assertFalse(coffre.isLapinLibere());
 	}
@@ -43,7 +43,7 @@ public class CoffreTest {
 	public void testApresAvoirRemisLeLivreDansLaBibliothequeSansAvoirTouchePrealablementALaChandelle() {
 		coffre.oterLivre();
 		coffre.remettreLivre();
-		assertEquals("CacheParBibliotheque",coffre.getNomEtat());
+		assertEquals("Caché Par Bibliothèque",coffre.getNomEtat());
 		assertFalse(coffre.isChienLibere());
 		assertFalse(coffre.isLapinLibere());
 	}
@@ -53,7 +53,7 @@ public class CoffreTest {
 		coffre.oterLivre();
 		coffre.tournerChandelleVersDroite();
 		
-		assertEquals("PresqueOuvert", coffre.getNomEtat());
+		assertEquals("Presque Ouvert", coffre.getNomEtat());
 		assertTrue(coffre.isChienLibere());
 		assertFalse(coffre.isLapinLibere());
 		
@@ -64,7 +64,7 @@ public class CoffreTest {
 		coffre.oterLivre();
 		coffre.tournerChandelleVersGauche();
 		
-		assertEquals("Bloque", coffre.getNomEtat());
+		assertEquals("Bloqué", coffre.getNomEtat());
 		assertFalse(coffre.isChienLibere());
 		assertTrue(coffre.isLapinLibere());
 	}
@@ -76,7 +76,7 @@ public class CoffreTest {
 			coffre.remettreLivre();
 		}
 		
-		assertEquals("CacheParBibliotheque",coffre.getNomEtat());
+		assertEquals("Caché Par Bibliothèque",coffre.getNomEtat());
 		assertFalse(coffre.isChienLibere());
 		assertFalse(coffre.isLapinLibere());
 	}
@@ -85,7 +85,7 @@ public class CoffreTest {
 	public void tournerChandelleSansLivre() {
 		coffre.tournerChandelleVersDroite();
 		
-		assertEquals("CacheParBibliotheque", coffre.getNomEtat());
+		assertEquals("Caché Par Bibliothèque", coffre.getNomEtat());
 		assertFalse(coffre.isChienLibere());
 		assertFalse(coffre.isLapinLibere());
 	}
@@ -96,7 +96,7 @@ public class CoffreTest {
 		coffre.tournerChandelleVersDroite();
 		coffre.remettreLivre();
 		
-		assertEquals("CacheParBibliotheque", coffre.getNomEtat());
+		assertEquals("Caché Par Bibliothèque", coffre.getNomEtat());
 		assertFalse(coffre.isChienLibere());
 		assertFalse(coffre.isLapinLibere());
 	}
@@ -107,7 +107,7 @@ public class CoffreTest {
 			coffre.fermerCoffre();
 		}
 		
-		assertEquals("CacheParBibliotheque", coffre.getNomEtat());
+		assertEquals("Caché Par Bibliothèque", coffre.getNomEtat());
 		assertFalse(coffre.isChienLibere());
 		assertFalse(coffre.isLapinLibere());
 	}
@@ -132,7 +132,7 @@ public class CoffreTest {
 		coffre.fermerCoffre();
 		coffre.remettreLivre();
 		
-		assertEquals("CacheParBibliotheque", coffre.getNomEtat());
+		assertEquals("Caché Par Bibliothèque", coffre.getNomEtat());
 		assertFalse(coffre.isChienLibere());
 		assertFalse(coffre.isLapinLibere());
 	}
@@ -146,20 +146,20 @@ public class CoffreTest {
 			coffre.remettreLivre();
 		}
 		
-		assertEquals("CacheParBibliotheque", coffre.getNomEtat());
+		assertEquals("Caché Par Bibliothèque", coffre.getNomEtat());
 		assertFalse(coffre.isChienLibere());
 		assertFalse(coffre.isLapinLibere());
 	}
 
 	@Test
-	public void tenterDAgirLorsqueCoffreBloque() {
+	public void tenterDAgirLorsqueCoffreBloqué() {
 		coffre.oterLivre();
 		coffre.tournerChandelleVersGauche();
 		
 		coffre.tournerChandelleVersDroite();
 		coffre.tournerChandelleVersDroite();
 		
-		assertEquals("Bloque",coffre.getNomEtat());
+		assertEquals("Bloqué",coffre.getNomEtat());
 		assertFalse(coffre.isChienLibere());
 		assertTrue(coffre.isLapinLibere());
 	}

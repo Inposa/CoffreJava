@@ -1,7 +1,7 @@
 package fr.iut.coffre.src.entities.etatsCoffre;
 
 import fr.iut.coffre.src.entities.EtatsCoffre;
-import fr.iut.coffre.src.entities.I_CoffreChateau;
+import fr.iut.coffre.src.entities.I_Coffre;
 
 //Singleton
 public class Ouvert extends EtatsCoffre {
@@ -20,7 +20,7 @@ public class Ouvert extends EtatsCoffre {
 	}
 	
 	@Override
-	public void fermerCoffre(I_CoffreChateau coffre) {
+	public void fermerCoffre(I_Coffre coffre) {
 		coffre.setEtat(Ferme.getInstance());
 	}
 

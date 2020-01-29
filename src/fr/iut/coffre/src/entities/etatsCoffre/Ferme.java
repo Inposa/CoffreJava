@@ -1,12 +1,12 @@
 package fr.iut.coffre.src.entities.etatsCoffre;
 
 import fr.iut.coffre.src.entities.EtatsCoffre;
-import fr.iut.coffre.src.entities.I_CoffreChateau;
+import fr.iut.coffre.src.entities.I_Coffre;
 
 //Singleton
 public class Ferme extends Visible {
 	
-	private static String NOM_ETAT = "Ferme"; 
+	private static String NOM_ETAT = "Fermé"; 
 	private static Visible INSTANCE = null;
 	
 	private Ferme() {
@@ -22,7 +22,7 @@ public class Ferme extends Visible {
 	}
 	
 	@Override
-	public void tournerChandelleVersDroite(I_CoffreChateau coffre) {
+	public void tournerChandelleVersDroite(I_Coffre coffre) {
 		this.libererChien(coffre);
 		coffre.setEtat(PresqueOuvert.getInstance());
 	}

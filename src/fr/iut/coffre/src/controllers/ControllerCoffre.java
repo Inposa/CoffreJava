@@ -3,39 +3,47 @@ package fr.iut.coffre.src.controllers;
 import fr.iut.coffre.src.entities.Coffre;
 import fr.iut.coffre.src.entities.EtatsCoffre;
 //import fr.iut.coffre.src.entities.EtatsCoffre;
-import fr.iut.coffre.src.entities.I_CoffreChateau;
-import fr.iut.coffre.src.entities.Observateur;
+import fr.iut.coffre.src.entities.I_Coffre;
+import fr.iut.coffre.src.entities.ObservateurCoffre;
 
-public class FacadeCoffre {
-	private I_CoffreChateau coffre;
+public class ControllerCoffre implements ControllerChateauMedieval {
+	private I_Coffre coffre;
 	
-	public FacadeCoffre() {
-		this.coffre = new Coffre();
+	public ControllerCoffre(I_Coffre coffre) {
+		//this.coffre = new Coffre();
+		this.coffre = coffre;
 	}
 
+	@Override
 	public void oterLivre() {
 		this.coffre.oterLivre();
 	}
 
+	@Override
 	public void remettreLivre() {
 		this.coffre.remettreLivre();
 	}
 
+	@Override
 	public void tournerChandelleVersDroite() {
 		this.coffre.tournerChandelleVersDroite();
 	}
 
+	@Override
 	public void tournerChandelleVersGauche() {
 		this.coffre.tournerChandelleVersGauche();
 	}
 
+	@Override
 	public void fermerCoffre() {
 		this.coffre.fermerCoffre();
 	}
 
-	public void attacherObservateur(Observateur O) {
-		this.coffre.attacherObservateur(O);
+	@Override
+	public void setObservateur(ObservateurCoffre Obs) {
+		this.coffre.attacherObservateur(Obs);
 	}
+
 	
 	//public boolean isLapinLibere();
 	

@@ -7,7 +7,7 @@ import fr.iut.coffre.src.entities.etatsCoffre.Cache;
 
 // Contexte
 
-public class Coffre implements I_CoffreChateau {
+public class Coffre implements I_Coffre {
 	
 	private boolean chienLibere;
 	private boolean lapinLibere;
@@ -16,11 +16,11 @@ public class Coffre implements I_CoffreChateau {
 	
 	private String nomEtat;
 	
-	private List<Observateur> auditeurs;
+	private List<ObservateurCoffre> auditeurs;
 	
 	
 	public Coffre() {
-		this.auditeurs = new ArrayList<Observateur>();
+		this.auditeurs = new ArrayList<ObservateurCoffre>();
 		
 		this.etat = Cache.getInstance();
 		this.nomEtat = etat.getNomEtat();
@@ -35,14 +35,14 @@ public class Coffre implements I_CoffreChateau {
 	
 	//Ajouter un observateur à la liste
 	@Override
-	public void attacherObservateur(Observateur O) {
+	public void attacherObservateur(ObservateurCoffre O) {
 		this.auditeurs.add(O);
 		O.mettreAJour(this);
 		
 	}
 	
 	private void avertir() {
-		for(Observateur O : this.auditeurs) {
+		for(ObservateurCoffre O : this.auditeurs) {
 			O.mettreAJour(this);
 		}
 	}

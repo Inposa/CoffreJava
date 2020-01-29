@@ -3,10 +3,10 @@ package fr.iut.coffre.src.graphics;
 import java.awt.*;
 import javax.swing.*;
 
-import fr.iut.coffre.src.entities.I_CoffreChateau;
-import fr.iut.coffre.src.entities.Observateur;
+import fr.iut.coffre.src.entities.I_Coffre;
+import fr.iut.coffre.src.entities.ObservateurCoffre;
 
-public class FenetreEtat extends JFrame implements Observateur {
+public class FenetreEtat extends JFrame implements ObservateurCoffre {
 
 	private JTextField txtEtat;
 
@@ -29,7 +29,7 @@ public class FenetreEtat extends JFrame implements Observateur {
 	}
 
 	@Override
-	public void mettreAJour(I_CoffreChateau coffre) {
+	public void mettreAJour(I_Coffre coffre) {
 		this.afficherEtat(coffre.getNomEtat());
 	}
 	

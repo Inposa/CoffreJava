@@ -4,7 +4,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-import fr.iut.coffre.src.controllers.FacadeCoffre;
+import fr.iut.coffre.src.controllers.ControllerChateauMedieval;
+import fr.iut.coffre.src.controllers.ControllerCoffre;
+import fr.iut.coffre.src.entities.CoffreBuilder;
 
 public class FenetreChateauMedieval extends JFrame implements ActionListener,
 WindowListener{
@@ -16,8 +18,7 @@ WindowListener{
 	private JButton btFermerCoffre;
 	private JButton btQuitter;
 
-	private FacadeCoffre facadecoffre;
-
+	private ControllerChateauMedieval controllerChateau;
 
 	public FenetreChateauMedieval() {
 
@@ -58,35 +59,43 @@ WindowListener{
 
 		addWindowListener(this);
 		setVisible(true);
-		
-		this.facadecoffre = new FacadeCoffre();
-		
+
+		this.controllerChateau = new ControllerCoffre(CoffreBuilder.getNewCoffre());
+
 
 	}
 
 	public void actionPerformed(ActionEvent e) {
 
 		if (e.getSource() == btOterLivre) {
-			this.facadecoffre.oterLivre();
+			this.controllerChateau.oterLivre();
 			System.out.println("Vous venez d'appuyer sur le bouton Oter Livre UML");
 		}
-		if (e.getSource() == btRemettreLivre)
+		if (e.getSource() == btRemettreLivre) {
+			this.controllerChateau.remettreLivre();
 			System.out.println("Vous venez d'appuyer sur le bouton Remettre Livre UML");
-		if (e.getSource() == btTournerGauche)
+		}
+
+		if (e.getSource() == btTournerGauche) {
+			this.controllerChateau.tournerChandelleVersGauche();
 			System.out.println("Vous venez d'appuyer sur le bouton Tourner Chandelle vers la Gauche");
-		if (e.getSource() == btTournerDroite)
+		}
+		if (e.getSource() == btTournerDroite) {
+			this.controllerChateau.tournerChandelleVersDroite();
 			System.out.println("Vous venez d'appuyer sur le bouton Tourner Chandelle vers la Droite");
-		if (e.getSource() == btFermerCoffre)
+		}
+		if (e.getSource() == btFermerCoffre) {
+			this.controllerChateau.fermerCoffre();
 			System.out.println("Vous venez d'appuyer sur le bouton Fermer Coffre");
-		if (e.getSource() == btQuitter)
-		{
+		}
+		if (e.getSource() == btQuitter){
 			System.out.println("Vous venez d'appuyer sur le bouton Quitter, bye bye !");
 			System.exit(0);
 		}	
 	}
 
 	public void windowClosing(WindowEvent arg0) {
-		System.out.println("terminer");
+		System.out.println("Bye bye !");
 		System.exit(0);
 	}
 
@@ -145,16 +154,16 @@ WindowListener{
 
 	public static void main(String[] args) {
 		FenetreChateauMedieval c = new FenetreChateauMedieval();
-		
+
 		FenetreChienGentil F_chienGentil = new FenetreChienGentil();
 		FenetreEtat F_etat = new FenetreEtat();
 		FenetreLapinTueur F_lapin = new FenetreLapinTueur();
-		
-		c.facadecoffre.attacherObservateur(F_chienGentil);
-		c.facadecoffre.attacherObservateur(F_etat);
-		c.facadecoffre.attacherObservateur(F_lapin);
-		
-		
+
+		c.controllerChateau.setObservateur(F_chienGentil);
+		c.controllerChateau.setObservateur(F_etat);
+		c.controllerChateau.setObservateur(F_lapin);
+
+
 	}
 
 }

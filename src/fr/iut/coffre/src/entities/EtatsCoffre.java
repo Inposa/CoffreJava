@@ -11,20 +11,20 @@ public abstract class EtatsCoffre {
 	public abstract String getNomEtat();
 
 	
-	public void oterLivre(I_CoffreChateau coffre) {}
+	public void oterLivre(I_Coffre coffre) {}
 
-	public void remettreLivre(I_CoffreChateau coffre) {}
+	public void remettreLivre(I_Coffre coffre) {}
 
-	public void tournerChandelleVersDroite(I_CoffreChateau coffre) {}
+	public void tournerChandelleVersDroite(I_Coffre coffre) {}
 
-	public void tournerChandelleVersGauche(I_CoffreChateau coffre) {}
+	public void tournerChandelleVersGauche(I_Coffre coffre) {}
 
-	public void fermerCoffre(I_CoffreChateau coffre) {}
+	public void fermerCoffre(I_Coffre coffre) {}
 	
-	public void libererChien(I_CoffreChateau coffre) {}
+	public void libererChien(I_Coffre coffre) {}
 	
-	public void libererLapin(I_CoffreChateau coffre) {}
+	public void libererLapin(I_Coffre coffre) {}
 	
-	public void recupererChien(I_CoffreChateau coffre) {}
+	public void recupererChien(I_Coffre coffre) {}
 
 }

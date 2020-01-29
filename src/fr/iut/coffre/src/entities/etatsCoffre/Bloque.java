@@ -5,7 +5,7 @@ import fr.iut.coffre.src.entities.EtatsCoffre;
 //Singleton
 public class Bloque extends EtatsCoffre {
 
-	private static String NOM_ETAT = "Bloque";
+	private static String NOM_ETAT = "Bloqué";
 	private static EtatsCoffre INSTANCE = null;
 
 	private Bloque() {

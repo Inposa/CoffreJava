@@ -1,6 +1,6 @@
 package fr.iut.coffre.src.entities;
 
-public interface I_CoffreChateau {
+public interface I_Coffre {
 
 	public abstract void oterLivre();
 
@@ -24,6 +24,11 @@ public interface I_CoffreChateau {
 	
 	public abstract void setEtat(EtatsCoffre etatCoffre);
 	
-	public abstract void attacherObservateur(Observateur O);
+	public abstract void attacherObservateur(ObservateurCoffre O);
 
+	
+	//public abstract boolean peutRemettreLivre();
+	
+	
+	
 }

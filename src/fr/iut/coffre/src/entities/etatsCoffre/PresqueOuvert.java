@@ -1,12 +1,12 @@
 package fr.iut.coffre.src.entities.etatsCoffre;
 
 import fr.iut.coffre.src.entities.EtatsCoffre;
-import fr.iut.coffre.src.entities.I_CoffreChateau;
+import fr.iut.coffre.src.entities.I_Coffre;
 
 // Singleton
 public class PresqueOuvert extends Visible {
 	
-	private static String NOM_ETAT = "PresqueOuvert";
+	private static String NOM_ETAT = "Presque Ouvert";
 	private static Visible INSTANCE = null;
 	
 	private PresqueOuvert() {}
@@ -20,7 +20,7 @@ public class PresqueOuvert extends Visible {
 	}
 	
 	@Override
-	public void tournerChandelleVersDroite(I_CoffreChateau coffre) {
+	public void tournerChandelleVersDroite(I_Coffre coffre) {
 		coffre.setEtat(Ouvert.getInstance());
 	}
 
