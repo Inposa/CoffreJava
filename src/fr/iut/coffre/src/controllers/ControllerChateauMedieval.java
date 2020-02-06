@@ -16,6 +16,7 @@ public interface ControllerChateauMedieval {
 
 	public abstract void setObservateur(ObservateurCoffre O);
 	
+	
 	//public boolean isLapinLibere();
 	
 	//public void setLapinLibere(boolean lapinLibere);

@@ -7,6 +7,7 @@ import javax.swing.*;
 import fr.iut.coffre.src.controllers.ControllerChateauMedieval;
 import fr.iut.coffre.src.controllers.ControllerCoffre;
 import fr.iut.coffre.src.entities.CoffreBuilder;
+import fr.iut.coffre.src.entities.EtatsCoffre;
 import fr.iut.coffre.src.entities.I_Coffre;
 import fr.iut.coffre.src.entities.ObservateurCoffre;
 
@@ -64,8 +65,6 @@ WindowListener, ObservateurCoffre{
 		setVisible(true);
 
 		this.controllerChateau = new ControllerCoffre(CoffreBuilder.getNewCoffre());
-
-
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -145,22 +144,26 @@ WindowListener, ObservateurCoffre{
 	}
 
 	public static void main(String[] args) {
-		FenetreChateauMedieval c = new FenetreChateauMedieval();
+		FenetreChateauMedieval F_principale = new FenetreChateauMedieval();
 
 		FenetreChienGentil F_chienGentil = new FenetreChienGentil();
 		FenetreEtat F_etat = new FenetreEtat();
 		FenetreLapinTueur F_lapin = new FenetreLapinTueur();
 
-		c.controllerChateau.setObservateur(F_chienGentil);
-		c.controllerChateau.setObservateur(F_etat);
-		c.controllerChateau.setObservateur(F_lapin);
+		
+		F_principale.controllerChateau.setObservateur(F_principale);
+		F_principale.controllerChateau.setObservateur(F_chienGentil);
+		F_principale.controllerChateau.setObservateur(F_etat);
+		F_principale.controllerChateau.setObservateur(F_lapin);
 
 
 	}
 
 	@Override
 	public void mettreAJour(I_Coffre coffre) {
-
+		String etat = coffre.getNomEtat();
+		System.out.println("Mise à jour des boutons !");
+		
 	}
 
 }

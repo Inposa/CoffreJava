@@ -1,6 +1,6 @@
 package fr.iut.coffre.tests;
 
-import fr.iut.coffre.src.*;
+//import fr.iut.coffre.src.*;
 import fr.iut.coffre.src.entities.Coffre;
 import fr.iut.coffre.src.entities.I_Coffre;
 

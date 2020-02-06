@@ -133,4 +133,7 @@ public class Coffre implements I_Coffre {
 		return this.etat.peutFermerCoffre();
 	}
 
+	
+	
+	
 }

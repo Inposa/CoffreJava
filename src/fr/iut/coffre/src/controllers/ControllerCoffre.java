@@ -1,7 +1,6 @@
 package fr.iut.coffre.src.controllers;
 
-import fr.iut.coffre.src.entities.Coffre;
-import fr.iut.coffre.src.entities.EtatsCoffre;
+//import fr.iut.coffre.src.entities.Coffre;
 //import fr.iut.coffre.src.entities.EtatsCoffre;
 import fr.iut.coffre.src.entities.I_Coffre;
 import fr.iut.coffre.src.entities.ObservateurCoffre;
@@ -43,6 +42,7 @@ public class ControllerCoffre implements ControllerChateauMedieval {
 	public void setObservateur(ObservateurCoffre Obs) {
 		this.coffre.attacherObservateur(Obs);
 	}
+
 
 
 	//public boolean isLapinLibere();

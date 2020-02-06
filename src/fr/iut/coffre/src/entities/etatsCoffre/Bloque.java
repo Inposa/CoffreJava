@@ -8,9 +8,7 @@ public class Bloque extends EtatsCoffre {
 	private static String NOM_ETAT = "Bloqué";
 	private static EtatsCoffre INSTANCE = null;
 
-	private Bloque() {
-		
-	}
+	private Bloque() {}
 	
 	public static EtatsCoffre getInstance() {
 		if(Bloque.INSTANCE == null) {
@@ -35,8 +33,5 @@ public class Bloque extends EtatsCoffre {
 	public String getNomEtat() {
 		return Bloque.NOM_ETAT;
 	}
-
-
-
-
+ 
 }
